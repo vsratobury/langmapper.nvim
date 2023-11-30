@@ -10,10 +10,10 @@ local M = {}
 ---@param lhs string
 ---@return string
 function M.update_desc(old_desc, method, lhs)
-  old_desc = old_desc and old_desc or ''
-  local pack = old_desc ~= '' and old_desc .. ' ' or ''
-  local new_desc = pack .. 'LM (' .. method .. ' ' .. '"' .. lhs .. '")'
-  return new_desc
+  --
+  -- Для того чтобы Wansmer/langmapper.nvim не показывала эти дубликаты обнуляем desc
+  -- В folke/which-key.nvim указываем параметр ignore_missing = true
+  return ""
 end
 
 ---Return list of tuples where first elem - start index of keycode, last - end index of keycode
